@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venta de Productos/Servicios</title>
+    <link rel="stylesheet" href="style-boleta2.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <section class="products-section">
+            <div class="products-header">
+                <button id="almacen" type="button">Almacén/Sucursal</button>
+                <select class="combo-product" aria-label="Seleccionar almacén o sucursal">
+                    <option>20801 Tienda Principal</option>
+                </select>
+            </div>
+
+            <div class="products-list">
+                <div class="no-data">&lt;No data to display&gt;</div>
+            </div>
+
+            <form class="products-search-form" onsubmit="event.preventDefault(); alert('Buscando...');">
+                <div class="products-search">
+                    <button type="submit">
+                        <img src="Buscar.png" alt="Icono de búsqueda" width="12">
+                        Buscar
+                    </button>
+                    <input type="text" placeholder="Buscar producto..." aria-label="Campo de búsqueda de productos">
+                </div>
+            </form>
+
+            <div class="products-footer">
+                <div class="products-imagen">
+                   <!-- <img src="https://imgs.search.brave.com/9CHjbPauXgeucbwW1KxkGEfXFv4O-pudxXJc1NOt5Lw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZmllcnJvcy5jb20u/Y28vdXBsb2Fkcy9u/ZXdzLXBpY3R1cmVz/L3BwaG90by0yMjM2/LnBuZw" width="300"> -->
+                    <div class="imagen"></div>
+                    <button class="btn" type="button">⪻</button>
+                </div>
+
+                <div class="products-details">
+                    <form class="products-form">
+                        <div class="form-group">
+                            <label for="cantidad">Cantidad</label>
+                            <div class="input-group">
+                                <input type="number" id="cantidad" min="1" step="1">
+                                <button type="button">
+                                    <img src="xunids.png" alt="Icono de unidades" width="10">
+                                    x Unids.
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="precio">Precio</label>
+                            <div class="input-group">
+                                <input id="precio" name="precio" readonly>
+                                <button type="button">
+                                    <img src="agregar.png" alt="Icono de agregar producto" width="12">
+                                    Agregar
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subtotal">Sub Total</label>
+                            <div class="input-group">
+                                <input type="number" id="subtotal" name="subtotal" readonly>
+                                <button type="button">
+                                    <img src="limpiar.png" alt="Icono de limpiar campos" width="12">
+                                    Limpiar
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="checkbox-section">
+                        <input type="checkbox" id="ventaMenudeo" name="ventaMenudeo">
+                        <label  for="ventaMenudeo">Venta al Menudeo</label>
+                    </div>
+                    <div class="products-description"></div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="sales-section">
+            <div class="card-header">
+                <div class="header-left">
+                    <h1 class="card-title">PUMA SAICO BENIGNO</h1>
+                    <p class="subtitle">VENTA AL POR MENOR DE ARTÍCULOS DE FERRETERÍA</p>
+                </div>
+                <div class="header-right">
+                    <div class="boleta-info">
+                        <div class="boleta-number">10293270631</div>
+                        <select class="combo">
+                            <option value="orden-venta">ORDEN DE VENTA</option>
+                            <option value="factura">F A C T U R A</option>
+                            <option value="boleta">B O L E T A</option>
+                            <option value="proforma">P R O F O R M A</option>
+                            <option value="nota-credito">NOTA DE CRÉDITO</option>
+                            <option value="nota-debito">NOTA DE DÉBITO</option>
+                            <option value="guia-remision">GUÍA DE REMISIÓN</option>
+                            <option value="factura-fisica">FACTURA FÍSICA</option>
+                            <option value="boleta-fisica">BOLETA FÍSICA</option>
+                        </select>
+                        <div class="boleta-serie">
+                            <span class="serie-label">BB01</span>
+                            <span class="serie-number">00000003</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form class="sales-form">
+                <div class="card-content">
+                    <div class="form-group">
+                        <label for="fecha">Fecha</label>
+                        <input type="date" id="fecha">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="turno">Turno</label>
+                        <select id="turno" name="turno">
+                            <option>Mañana</option>
+                            <option>Tarde</option>
+                            <option>Noche</option>
+                            <option>Administrativo</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dni">DNI</label>
+                        <div class="dni-group">
+                            <input type="text" id="dni" name="dni" maxlength="8" pattern="[0-9]{8}">
+                            <button type="button">
+                                <img src="check.png" alt="Icono de validación" width="20">
+                            </button>
+                            <button type="button">
+                                <img src="lupa.png" alt="Icono de búsqueda por DNI" width="20">
+                            </button>
+                            <button type="button">
+                                <img src="lupa ruc.png" alt="Icono de búsqueda por RUC" width="20">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="senores">Señor(es)</label>
+                        <input type="text" id="senores" name="senores">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="direccion">Dirección</label>
+                        <input type="text" id="direccion" name="direccion">
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <div class="table-header">
+                        <span class="header-cell">CANT</span>
+                        <span class="header-cell">UNID</span>
+                        <span class="header-cell">DESCRIPCIÓN</span>
+                        <span class="header-cell">PU</span>
+                        <span class="header-cell">SUBT</span>
+                    </div>
+                    <div class="table-body">
+                    </div>
+                </div>
+
+                <div class="glosa-text">
+                    <button type="button">Glosa [x]</button>
+                    <input type="text">
+                    <button type="button">Detalles</button>
+                </div>
+            </form>
+
+            <div class="card-mid">
+                <div class="edit-section">
+                    <div class="action-buttons">
+                        <button type="button">
+                            <img src="editar.png" alt="Icono de editar cantidad" width="20">
+                            Editar Cantidad
+                        </button>
+                        <button type="button">
+                            <img src="xunids.png" alt="Icono de editar precio" width="13">
+                            Editar Precio
+                        </button>
+                        <button type="button">
+                            <img src="Eliminar.png" alt="Icono de eliminar producto" width="20">
+                            Eliminar Producto
+                        </button>
+                    </div>
+
+                    <div class="user-info">
+                        <span class="pto-vta">Pto Vta = 0</span>
+                        <div>
+                            <span class="registros">0 Registro(s)</span>
+                        </div>
+                        <span class="user-badge">Usuario = ADMIN SISTEMA</span>
+                    </div>
+                </div>
+
+                <div class="totals-section">
+                    <div class="total-row">
+                        <button>Sub Total...</button>
+                        <span class="total-value">S/. 0.00</span>
+                    </div>
+
+                    <div class="total-row">
+                        <button>(0.00) I.G.V.</button>
+                        <span class="total-value">S/. 0.00</span>
+                    </div>
+
+                    <div class="total-row">
+                        <button>Total</button>
+                        <span class="total-value" id="total">S/. 0.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="payment-section">
+                <label for="tipoPago">Tipo Pago</label>
+                <select id="tipoPago">
+                    <option>CONTADO</option>
+                    <option>CRÉDITO</option>
+                    <option>DEPÓSITO/VISA</option>
+                    <option>CHEQUE</option>
+                </select>
+            </div>
+
+            <div class="card-buttons">
+                <button type="button">
+                    <img src="Nuevo comprobante.png" alt="Icono de nuevo comprobante" width="20">
+                    Nuevo Comprobante
+                </button>
+                <button type="submit" form="sales-form">
+                    <img src="emitir documento.png" alt="Icono de emitir documento" width="20">
+                    Emitir Documento
+                </button>
+                <button type="button">
+                    <img src="cerrar ventana.png" alt="Icono de cerrar ventana" width="20">
+                    Cerrar Ventana
+                </button>
+            </div>
+            <div class="checkbox-sales">
+                <input type="checkbox" id="noAfectar">
+                <label for="noAfectar">No Afectar el Stock. Cuentas</label>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
